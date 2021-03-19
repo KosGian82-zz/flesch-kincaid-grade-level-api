@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Text readability</title>
+    </head>
+    <body>
+        <h1>
+            <strong>
+                This API will return the Flesch–Kincaid Grade Level of some used-defined text
+            </strong>
+        </h1>
+        <h3>Please enter a piece of text, at least 100 words long</h3>
+        {% from "_formhelpers.html" import render_field %}
+        <form method=post action="/results">
+            <dl>
+                {{ render_field(form.textreadability, cols='40', rows='10') }}
+            </dl>
+            <div>
+                <input type=submit value='Submit text' name='submit_btn'>
+            </div>
+        </form>
+    </body>
+</html>

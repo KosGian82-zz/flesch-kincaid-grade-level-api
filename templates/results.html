@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Flesch Kincaid Grade Level</title>
+        <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+    </head>
+    <body>
+        <h3> Your piece of text is: </h3>
+        <div>{{ content }}</div>
+        <h3> Flesch-Kincaid Grade Level: </h3>
+        <div>
+            <strong> {{ result }} </strong>
+        </div>
+    </body>
+</html>
