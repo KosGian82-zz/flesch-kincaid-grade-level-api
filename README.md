@@ -6,8 +6,8 @@ provided by the web application and clicks on the `Submit text` button to receiv
 F-K grade level. It consists of only one endpoint and one POST method, it constitutes 
 a Python3 Flask application with HTML renderings and was written in Ubuntu Linux 18.04.
 
-The API is based on a working example found in the book *Python Machine Learning*, 
-by Sebastian Raschka, in Chapter 9 *Embedding a Machine Learning Model into a Web Application*. 
+The API is based on a working example found in the book **Python Machine Learning**, 
+by Sebastian Raschka, in Chapter 9 **Embedding a Machine Learning Model into a Web Application**. 
 It is currently hosted on [pythonanywhere](http://kosgian82.pythonanywhere.com), 
 but it can be also downloaded through this repository and be run locally.
 
@@ -20,18 +20,18 @@ on [Python installation](https://realpython.com/installing-python/) or any other
 
 Other libraries needed to run this API (preferably within a virtual environment):
 
-- Python3 Flask
+* Python3 Flask
 
 ```
 $ pip3 install flask
 ```
-- py-readability-metrics
+* py-readability-metrics
 
 ```
 $ pip3 install py-readability-metrics
 $ python3 -m nltk.downloader punkt
 ```
-- The WTForms library
+* The WTForms library
 
 ```
 $ pip3 install wtforms
@@ -59,15 +59,15 @@ If done correctly, the directory tree should look like this:
 
 2 directories, 6 files
 ```
-where `flask_app.py` is the main Python code that includes the Flask application of the API, 
+* `flask_app.py` is the main Python code that includes the Flask application of the API, 
 as well as the readability metrics function for calculating F-K. 
 
-`static` contains just a very simple Cascading Style Sheets (file) `style.css`for modifying 
+* `static` contains just a very simple Cascading Style Sheets (file) `style.css`for modifying 
 the look and displays of the HTML documents if we want to. 
 
-`templates` contains `_formhelpers.html`, a generic macro based on Jinja2 templating engine 
+* `templates` contains `_formhelpers.html`, a generic macro based on Jinja2 templating engine 
 for rendering text fields in HTML files, `text_readability.html`, the starting page of the 
-API and `results.html`, which displays the results after clicking on the `Submit text` button, 
+API and `results.html`, which displays the results after clicking on the **Submit text** button, 
 i.e. the text entered by the user and the F-K grade level.
 
 
@@ -91,6 +91,30 @@ The output of the command should look like this
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-Copy and paste `http://127.0.0.1:5000/`on your web browser, or right-click on the URL, 
-enter a piece of test (100 words or longer) in the box provided by the web page and 
-click on `Submit text` button.
+Copy and paste `http://127.0.0.1:5000/`on your web browser, or right-click on the URL. 
+Then, enter a piece of text (100 words or longer) in the box provided by the web page and 
+finally, click on **Submit text** button.
+
+## Deploying the API to a public server
+
+I have already deployed this API to *PythonAnywhere* web hosting service and can be 
+accessed [here](http://kosgian82.pythonanywhere.com). I followed Raschka's example 
+in the same chapter, where he suggests this hosting service, as it allows free accounts 
+with limited use and the process is fairly simple for beginners.
+
+Here are some rather detailed instructions:
+
+1. Go to *https://www.pyhtonanywhere.com*
+2. Create a beginner account from the *Pricing & signup* link on the top-rright corner
+3. Access the control panel of your account through the *Dashboard* 
+4. Clicke on the  *Web* tab and then *Add a new web app*
+5. Follow the wizard for creating a Flask web application
+6. Click on the *Files* tab and upload the repository files under `/home/<username>/mysite/`
+7. On the *Web* tab click on *Reload <username>.pythonanywhere.com*
+8. If all done correctly, the API should be up and running at `<username>.pythonanywhere.com`
+
+This is just a general set of instructions. In practice, some debugging might be needed, like 
+I had to do for this API, or even installations of some prerequisite libraries on the web interface. 
+In any case, consult the error logs for more information.
+
+## Improving the API
