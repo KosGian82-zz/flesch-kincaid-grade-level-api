@@ -8,15 +8,22 @@ a Python3 Flask application with HTML renderings and was written in Ubuntu Linux
 
 The API is based on a working example found in the book **Python Machine Learning**, 
 by Sebastian Raschka, in Chapter 9 **Embedding a Machine Learning Model into a Web Application**. 
-It is currently hosted on [pythonanywhere](http://kosgian82.pythonanywhere.com), 
-but it can be also downloaded through this repository and be run locally.
+It is currently hosted on [PythonAnywhere](http://kosgian82.pythonanywhere.com), 
+but it can be also downloaded through this repository and be run locally. Raschka's example 
+is about creating a web application of a binary classifier for movie reviews and I have used 
+parts of the code for creating this application in a similar fashion.
+
+I have also tried to adhere my Python code to PEP8 standards as much as possible, such as 
+separate lines for each import, imports ordered alphabetically, two empty lines between 
+functions' or classes' declarations, no more than 100 characters per line etc.
 
 
 ## Installation
 
 This README.md assumes that the user has Python3 installed on their machine. To install 
-Python3 from scratch, follow some online instructions 
-on [Python installation](https://realpython.com/installing-python/) or any other online resource you may wish to use.
+Python3 from scratch, follow the reccommended online instructions on 
+[Python installation](https://realpython.com/installing-python/) 
+or any other online resource you may find useful.
 
 Other libraries needed to run this API (preferably within a virtual environment):
 
@@ -37,7 +44,8 @@ $ python3 -m nltk.downloader punkt
 $ pip3 install wtforms
 ```
 
-Start by cloning this repository:
+To clone this repository, run the following command on Git Bash or Linux terminal from 
+inside the directory you want this repository to be cloned:
 
 ```
 $ git clone git@github.com:KosGian82/flesch-kincaid-grade-level-api.git
@@ -93,19 +101,22 @@ The output of the command should look like this
 
 Copy and paste `http://127.0.0.1:5000/`on your web browser, or right-click on the URL. 
 Then, enter a piece of text (100 words or longer) in the box provided by the web page and 
-finally, click on **Submit text** button.
+finally, click on **Submit text** button. The `/results` page should display the text you 
+entered and the F-K grade level of the text (or an error message if your text was shorter 
+than 100 words).
+
 
 ## Deploying the API to a public server
 
-I have already deployed this API to *PythonAnywhere* web hosting service and can be 
-accessed [here](http://kosgian82.pythonanywhere.com). I followed Raschka's example 
+I have already deployed this API to **PythonAnywhere** web hosting service and can be 
+accessed from [here](http://kosgian82.pythonanywhere.com). I followed Raschka's example 
 in the same chapter, where he suggests this hosting service, as it allows free accounts 
 with limited use and the process is fairly simple for beginners.
 
 Here are some rather detailed instructions:
 
 1. Go to *https://www.pyhtonanywhere.com*
-2. Create a beginner account from the *Pricing & signup* link on the top-rright corner
+2. Create a beginner account from the *Pricing & signup* link on the top-right corner
 3. Access the control panel of your account through the *Dashboard* 
 4. Click on the  *Web* tab and then *Add a new web app*
 5. Follow the wizard for creating a Flask web application
@@ -115,7 +126,7 @@ Here are some rather detailed instructions:
 
 This is just a general set of instructions. In practice, some debugging might be needed, like 
 I had to do for this API, or even installations of some prerequisite libraries on the web interface. 
-In any case, consult the error logs for more information.
+In any case, consult your error logs for more information.
 
 ## Improving the API
 
@@ -124,8 +135,18 @@ There are several ways to imrpove and expand it:
 
 * First of all, it is open to anyone, which makes it unsafe if it is meant to be used 
 for more important tasks. A more secure RESTful API would require a user to submit 
-their authentication information with every request they send, y using something like 
-the *Flask-HTTPAuth* Flask extension.
+their authentication information with every request they send, by using something like 
+the *Flask-HTTPAuth* Flask extension. Such an authentication request should be stateless, 
+according to RESTful architectures, and the API should  not save the user's data generated 
+in one session for use in another session with the same or another user.
+
+* The API could possibly benefit from more RESTful features, such as: 
+1. Enabling transfer of data via *JSON* if possible
+2. Use of common error HTTP codes for not found, forbidden, bad request etc.
+3. Sending requests with `curl`
+4. Use of versioning in the URL to allow development on newer versions whilst still running older ones
+5. Use of caching so that we do not have to query for data all the time
+6. Use of nouns in endpoints instead of verbs and consistent paths of endpoints
 
 * At the moment, the API supports only one method POST, for requests to create new resources, 
 however it does not store any information. A more complete API would probably have a 
@@ -138,4 +159,18 @@ other readability statistics if we wished.
 Heavier applications, such as a fully end-to-end trained machine learning model would 
 probably run on some web application in serialised form and the API would be designed 
 to deserialise such a model appropriately. Libraries, like Python's Pickle could be 
-used for such purposes. 
+used for such purposes.
+
+## References
+
+This has been my first ever web application and I had to use some resources to learn 
+about Flask in Python, HTML rendering and REST APIs, either by using paradigms or borrowing code:
+
+* [Best practices for REST API design](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+
+* [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
+
+* [Designing a RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
+
+* [Python Machine Learning](https://www.goodreads.com/book/show/25545994-python-machine-learning), 
+by Sebastian Raschka, pp. 251 -- 276
