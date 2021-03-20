@@ -2,7 +2,7 @@
 
 This is a very simple REST API that accepts a piece of text from the user and returns 
 the Flesch-Kincaid (F-K) grade level of the text. The user enters the text in the box 
-provided by the web application and clicks on the `Submit text` button to receive the 
+provided by the web application and clicks on the **Submit text** button to receive the 
 F-K grade level. It consists of only one endpoint and one POST method, it constitutes 
 a Python3 Flask application with HTML renderings and was written in Ubuntu Linux 18.04.
 
@@ -107,7 +107,7 @@ Here are some rather detailed instructions:
 1. Go to *https://www.pyhtonanywhere.com*
 2. Create a beginner account from the *Pricing & signup* link on the top-rright corner
 3. Access the control panel of your account through the *Dashboard* 
-4. Clicke on the  *Web* tab and then *Add a new web app*
+4. Click on the  *Web* tab and then *Add a new web app*
 5. Follow the wizard for creating a Flask web application
 6. Click on the *Files* tab and upload the repository files under `/home/<username>/mysite/`
 7. On the *Web* tab click on *Reload <username>.pythonanywhere.com*
@@ -118,3 +118,24 @@ I had to do for this API, or even installations of some prerequisite libraries o
 In any case, consult the error logs for more information.
 
 ## Improving the API
+
+As mentioned from the very beginning, this is a very basic API with very limited use. 
+There are several ways to imrpove and expand it:
+
+* First of all, it is open to anyone, which makes it unsafe if it is meant to be used 
+for more important tasks. A more secure RESTful API would require a user to submit 
+their authentication information with every request they send, y using something like 
+the *Flask-HTTPAuth* Flask extension.
+
+* At the moment, the API supports only one method POST, for requests to create new resources, 
+however it does not store any information. A more complete API would probably have a 
+database too, such as *SQLite*, where users would be able to retrieve data with a GET 
+method, update with PUT, or remove data with DELETE methods. For example, some *SQLite* 
+database would be able to store all the pieces of text someone posts with F-K scores and 
+other readability statistics if we wished.
+
+* The F-K calculation function is a light-weight method inside the `flask_app.py` file. 
+Heavier applications, such as a fully end-to-end trained machine learning model would 
+probably run on some web application in serialised form and the API would be designed 
+to deserialise such a model appropriately. Libraries, like Python's Pickle could be 
+used for such purposes. 
