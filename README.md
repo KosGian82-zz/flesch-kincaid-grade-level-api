@@ -164,13 +164,16 @@ used for such purposes.
 ## References
 
 This has been my first ever web application and I had to use some resources to learn 
-about Flask in Python, HTML rendering and REST APIs, either by using paradigms or borrowing code:
+about Flask and readability metrics on Python, HTML rendering and REST APIs, 
+either by using paradigms or borrowing code:
 
 * [Best practices for REST API design](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
-
-* [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
 
 * [Designing a RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
 
 * [Python Machine Learning](https://www.goodreads.com/book/show/25545994-python-machine-learning), 
 by Sebastian Raschka, pp. 251 - 276
+
+* [py-readability-metrics](https://py-readability-metrics.readthedocs.io/en/latest/)
+
+* [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
