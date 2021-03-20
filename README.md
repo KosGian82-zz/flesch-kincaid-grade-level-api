@@ -44,7 +44,7 @@ $ python3 -m nltk.downloader punkt
 $ pip3 install wtforms
 ```
 
-To clone this repository, run the following command on Git Bash or Linux terminal from 
+To clone this repository, run the following command on Git Bash or on a Linux terminal from 
 inside the directory you want this repository to be cloned:
 
 ```
@@ -81,8 +81,8 @@ i.e. the text entered by the user and the F-K grade level.
 
 ## Running the API locally
 
-To run the API on your local machine, open a Python concole or a terminal in Linux and from 
-the top level directory of the repository run:
+To run the API on your local machine, start Python from a command prompt on Windows, 
+or a terminal in Linux or Mac, and from the top level directory of the repository run:
 
 ```
 $ python3 flask_app.py
@@ -173,4 +173,4 @@ about Flask in Python, HTML rendering and REST APIs, either by using paradigms o
 * [Designing a RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
 
 * [Python Machine Learning](https://www.goodreads.com/book/show/25545994-python-machine-learning), 
-by Sebastian Raschka, pp. 251 -- 276
+by Sebastian Raschka, pp. 251 - 276
